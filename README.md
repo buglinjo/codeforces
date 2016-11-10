@@ -1,4 +1,4 @@
-#Codeforces Problemset Solutions (By Me :blush: )
+#Codeforces Problemset Solutions (By me :blush: )
 
 ##All of the problems are under copyright of [Codeforces.com](http://codeforces.com) 
 
