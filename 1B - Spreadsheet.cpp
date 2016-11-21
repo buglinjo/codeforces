@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <algorithm>
 #include <string>
-
 using namespace std;
 
 string getY(int y) {
@@ -30,16 +29,14 @@ string getX(string x) {
     int ans = 0, num;
     for (int i = 0, j = x.size() - 1; i < x.size(), j >= 0; i++, j--) {
         num = x[j] - 64;
-        num = num * pow(26, i);
+        num = num * round(pow(26, i));
         ans += num;
     }
-    //DAFUQ????
-    cout << ans << endl;
-    //return to_string(ans);
+    return to_string(ans);
 }
 
 string strToInt(string x, string y) {
-    return getX(x) + y;
+    return 'R' + y + 'C' + getX(x);
 }
 
 int n, c, xi, yi;
@@ -47,6 +44,8 @@ string a, x, y;
 int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {
+        x = "";
+        y = "";
         cin >> a;
         c = 0;
         if (a[0] == 'R') {
@@ -61,8 +60,8 @@ int main() {
                     }
                 }
             }
-            yi = atoi(y.c_str());;
-            cout << intToStr(x, yi);
+            yi = stoi(y);
+            cout << intToStr(x, yi) << endl;
         } else {
             for (int j = 0; j < a.size(); j++) {
                 if (a[j] < 65) {
@@ -71,7 +70,7 @@ int main() {
                     x += a[j];
                 }
             }
-            cout << strToInt(x, y);
+            cout << strToInt(x, y) << endl;
         }
     }
 }
