@@ -8,6 +8,10 @@ int main() {
         if (a[i] == b[j]) {
             j++;
             pas++;
+            
+            if (pas == 5) {
+                break;
+            }
         }
     }
     if (pas == 5) {
